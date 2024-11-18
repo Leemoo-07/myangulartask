@@ -1,0 +1,30 @@
+.container {
+    height: 100vh;
+  }
+  
+  .login-card {
+    width: 400px;
+    background: blanchedalmond;
+    border-radius: 10px;
+    color: #ffffff; 
+  }
+  
+  .login-card h4 {
+    color: #fff;
+  }
+  
+  .input-group-text {
+    background-color: #17a2b8; 
+    color: white;
+    border: none;
+  }
+  
+  .btn-primary {
+    background-color: #17a2b8;
+    
+  }
+  
+  .btn-primary:hover {
+    background-color: #138f9a;
+  }
+  

@@ -1,13 +1,37 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';  // Import CommonModule for *ngIf
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [
+    FormsModule,     
+    RouterModule,   
+    CommonModule,   
+  ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angularproject';
+  username: string = '';
+  password: string = '';
+  isLoggedIn: boolean = false;  
+  constructor(private router: Router) {}
+
+  onSubmit() {
+    const validUsername = 'admin';
+    const validPassword = '12345';
+
+    if (this.username === validUsername && this.password === validPassword) {
+      this.isLoggedIn = true; 
+      this.router.navigate(['/home']);  
+      alert('Login successful!');
+    }
+    else{
+      alert('Invalid username or password!');
+      }
+  }
 }
